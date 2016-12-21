@@ -24,21 +24,21 @@ public class MyGdxGameanimationscratch extends ApplicationAdapter implements Inp
         Gdx.input.setInputProcessor((this));
         nFrame = 0;
         nPos = 0; // the position in the SpriteSheet - 0 to 7
-        araniVlad = new Animation[8];
+        araniVlad = new Animation[7];
         batch = new SpriteBatch();
-        txSheet = new Texture("dino.png");
-        fW = txSheet.getWidth() / 4;
-        fH = txSheet.getHeight() / 4;
+        txSheet = new Texture("REALDINO.png.png");
+        fW = txSheet.getWidth() / 1;
+        fH = txSheet.getHeight() / 7;
         System.out.println(fW + " " + fH);
-        for (int i = 0; i < 8; i++) {
-            Sprite[] arSprVlad = new Sprite[8];
-            for (int j = 0; j < 8; j++) {
-                fSx = j * fW;
+        for (int i = 0; i < 7; i++) {
+            Sprite[] arSprVlad = new Sprite[7];
+            //for (int j = 0; j < 8; j++) {
+                //fSx = j * fW;
                 fSy = i * fH;
                 sprVlad = new Sprite(txSheet, fSx, fSy, fW, fH);
-                arSprVlad[j] = new Sprite(sprVlad);
-            }
-            araniVlad[i] = new Animation(5.2f, arSprVlad);
+                //arSprVlad[j] = new Sprite(sprVlad);
+            //}
+            araniVlad[i] = new Animation(5.2f, sprVlad);
 
         }
     }
@@ -63,12 +63,12 @@ public class MyGdxGameanimationscratch extends ApplicationAdapter implements Inp
         //Keypad 0-9 is Keycode 96 to 105 in unicode, keycode 0 is 144
         System.out.println("keydown " + keycode);
         if (keycode == Keys.LEFT) {
-            nPos = 1;
+            nPos = 2;
 //            nPos = keycode - 144;
 //            System.out.println(nPos);
         }
           if (keycode == Keys.RIGHT) {
-            nPos = 2;
+            nPos = 3;
 //            nPos = keycode - 144;
 //            System.out.println(nPos);
         }
